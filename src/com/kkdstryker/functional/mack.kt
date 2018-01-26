@@ -49,8 +49,9 @@ tailrec fun foldUntilHLT(eval: (List<Int>, InstructionSet) -> List<Int>, stack: 
             println("done")
             return stack
         }
-        else ->
+        else -> {
             foldUntilHLT(eval, eval(stack, head), tail)
+        }
     }
 }
 
